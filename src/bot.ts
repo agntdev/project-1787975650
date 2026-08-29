@@ -6,10 +6,12 @@ import type { StorageAdapter } from "grammy";
 // bot grows. Durable domain data must NOT live here — use the toolkit's
 // persistent storage (see AGENTS.md).
 export interface Session {
-  // example: step?: "awaiting_amount";
+  reviewTargetChatId?: number;
+  lastSensitivity?: "general" | "sensitive";
 }
 
-export type Ctx = BotContext<Session>;
+// Worker handlers receive bindings here; it stays optional for Node and the test harness.
+export type Ctx = BotContext<Session> & { env?: unknown };
 
 /**
  * BuildBotOptions lets a runtime-specific ENTRY POINT (never a feature handler)

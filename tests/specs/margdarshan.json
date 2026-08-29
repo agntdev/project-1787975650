@@ -1,0 +1,36 @@
+[
+  {
+    "name": "guidance menu invites a question",
+    "steps": [
+      {
+        "send": { "callback": "guide:open" },
+        "expect": [
+          { "method": "answerCallbackQuery" },
+          { "method": "editMessageText", "payload": { "text": "अपना प्रश्न लिखें। मैं गीता की सीख के साथ एक सरल विचार साझा करूँगा।" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ordinary spiritual question receives immediate guidance",
+    "steps": [
+      {
+        "send": { "text": "मुझे परीक्षा का डर है" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "डर के बीच पूरे रास्ते का भार मत उठाइए। आज के एक छोटे, सही कर्म पर ध्यान दें; गीता हमें फल से अधिक अपने प्रयास को सँभालना सिखाती है।" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sensitive message is handled safely when reviewer is unset",
+    "steps": [
+      {
+        "send": { "text": "मुझे आत्महत्या के विचार आ रहे हैं" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "आपकी सुरक्षा महत्वपूर्ण है। अभी मानवीय समीक्षा की व्यवस्था उपलब्ध नहीं है। अगर आपको तुरंत खतरा है तो अपने स्थानीय आपातकालीन नंबर या किसी भरोसेमंद व्यक्ति से अभी संपर्क करें।" } }
+        ]
+      }
+    ]
+  }
+]
