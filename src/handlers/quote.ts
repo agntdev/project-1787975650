@@ -33,8 +33,9 @@ async function sendQuote(ctx: Ctx): Promise<void> {
 
 const composer = new Composer<Ctx>();
 
-// This is the blueprint's explicit typed shortcut; the menu button is primary.
-composer.command("उद्धरण", sendQuote);
+// Telegram slash-command names are restricted to Latin letters, numbers, and
+// underscores. Keep the Hindi shortcut as ordinary text, alongside the menu
+// button that is the primary entry point.
 composer.hears(/^(उद्धरण|श्लोक|गीता उद्धरण|quote)$/iu, sendQuote);
 // Telegram command parsing is ASCII-oriented; this keeps the Hindi shortcut
 // reliable when Telegram supplies it as ordinary text.
