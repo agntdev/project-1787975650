@@ -7,7 +7,7 @@
         "expect": [
           {
             "method": "sendMessage",
-            "payload": { "text": "👋 Welcome! Tap a button below to get started." }
+            "payload": { "text": "नमस्ते। गीता की सीख के साथ थोड़ा ठहरें।\n\nनीचे से चुनें, या अपना मन का प्रश्न लिखें।" }
           }
         ]
       }
